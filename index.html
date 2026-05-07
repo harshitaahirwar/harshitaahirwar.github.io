@@ -1,116 +1,741 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <title>Harshita API Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Harshita Portfolio</title>
+<link rel="icon" type="image/png" href="https://static.vecteezy.com/system/resources/previews/021/054/630/original/3d-gold-effect-letter-h-free-png.png">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-      text-align: center;
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
     }
 
-    header {
-      padding: 40px;
-      background: linear-gradient(135deg, #1e3a8a, #9333ea);
+    body{
+      font-family:Arial, sans-serif;
+      background:#050816;
+      color:white;
+      overflow-x:hidden;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 40px;
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      background:rgba(5,8,22,0.7);
+      backdrop-filter:blur(10px);
+      z-index:1000;
     }
 
-    .container {
-      padding: 40px;
+    nav h1{
+      color:#8b5cf6;
+      font-size:32px;
     }
 
-    .card {
-      background: #1e293b;
-      margin: 20px auto;
-      padding: 20px;
-      width: 300px;
-      border-radius: 12px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
     }
 
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+      font-size:17px;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #6366f1;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s;
+    nav ul li a:hover{
+      color:#a855f7;
     }
 
-    .btn:hover {
-      background: #4f46e5;
+    /* BACKGROUND LIGHTS */
+
+    .lights div{
+      position:absolute;
+      border-radius:50%;
+      background:#9333ea;
+      filter:blur(90px);
+      animation:float 8s infinite ease-in-out;
+      z-index:-1;
     }
 
-    .section {
-      margin-top: 50px;
+    .light1{
+      width:220px;
+      height:220px;
+      top:120px;
+      left:100px;
     }
 
-    footer {
-      margin-top: 50px;
-      padding: 20px;
-      background: #020617;
+    .light2{
+      width:260px;
+      height:260px;
+      top:300px;
+      right:100px;
+      background:#2563eb !important;
     }
+
+    .light3{
+      width:180px;
+      height:180px;
+      bottom:100px;
+      left:40%;
+    }
+
+    @keyframes float{
+
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-30px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+
+    }
+
+    /* HERO */
+
+    header{
+      min-height:75vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:120px 20px 40px;
+    }
+
+    .hero-box{
+      padding:40px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.1);
+      backdrop-filter:blur(10px);
+      animation:moveBox 4s infinite ease-in-out;
+    }
+
+    @keyframes moveBox{
+
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-10px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+
+    }
+
+    .hero-box h1{
+      font-size:70px;
+      background:linear-gradient(to right,#ec4899,#3b82f6);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      margin-bottom:15px;
+    }
+
+    .hero-box h2{
+      color:#d8b4fe;
+      font-size:35px;
+      margin-bottom:20px;
+    }
+
+    .hero-box h3{
+      color:#5f3b85;
+      font-size:35px;
+      margin-bottom:20px;
+
+    }
+
+    .typing{
+      font-size:22px;
+      overflow:hidden;
+      border-right:3px solid white;
+      white-space:nowrap;
+      width:0;
+      margin:auto;
+      animation:
+      typing 5s steps(40,end) infinite alternate,
+      blink .7s infinite;
+    }
+
+    @keyframes typing{
+
+      from{
+        width:0;
+      }
+
+      to{
+        width:100%;
+      }
+
+    }
+
+    @keyframes blink{
+
+      50%{
+        border-color:transparent;
+      }
+
+    }
+
+    .hero-btn{
+      display:inline-block;
+      margin-top:30px;
+      padding:14px 35px;
+      background:linear-gradient(45deg,#7c3aed,#ec4899);
+      border-radius:12px;
+      color:white;
+      text-decoration:none;
+      transition:0.4s;
+      font-weight:bold;
+    }
+
+    .hero-btn:hover{
+      transform:scale(1.08);
+    }
+
+    /* SECTIONS */
+
+    section{
+      padding:80px 8%;
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:50px;
+      color:#a855f7;
+      font-size:45px;
+    }
+
+    /* TOOLS */
+
+    .tools{
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      flex-wrap:wrap;
+    }
+
+    .tool-card{
+      width:220px;
+      padding:35px;
+      background:rgba(255,255,255,0.04);
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.1);
+      text-align:center;
+      transition:0.4s;
+    }
+
+
+    h4{
+       color: #6e3f9b;
+  line-height: 1.6;
+  margin-bottom: 20px;
+    }
+
+    .tool-card:hover{
+      transform:translateY(-12px);
+      box-shadow:0 0 25px rgba(168,85,247,0.5);
+    }
+
+    .tool-card i{
+      font-size:60px;
+      margin-bottom:20px;
+      color:#8b5cf6;
+    }
+
+    .tool-card h3{
+      font-size:28px;
+    }
+
+    /* PROJECTS */
+
+    .project-link{
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+}
+
+.project-card{
+  width: 320px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 25px;
+  transition: 0.4s;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+.project-card:hover{
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 25px rgba(56,189,248,0.4);
+  border-color: #38bdf8;
+}
+
+.project-icon{
+  font-size: 40px;
+  color: #38bdf8;
+  margin-bottom: 15px;
+}
+
+.project-card h2{
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.project-card p{
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.github-btn{
+  background: #38bdf8;
+  color: #0f172a;
+  padding: 10px 18px;
+  border-radius: 10px;
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.project-card:hover .github-btn{
+  background: white;
+}
+
+.tags{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tags span{
+  background: rgba(56,189,248,0.15);
+  color: #38bdf8;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 14px;
+}
+    .projects{
+      display:flex;
+      justify-content:center;
+      gap:40px;
+      flex-wrap:wrap;
+    }
+
+    .project-card{
+      width:500px;
+      padding:30px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.1);
+      transition:0.4s;
+    }
+
+    .project-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 30px rgba(168,85,247,0.4);
+    }
+
+    .project-card h2{
+      margin:20px 0;
+      color:#c084fc;
+    }
+
+    .project-card p{
+      line-height:30px;
+      color:#d1d5db;
+    }
+
+    .tags{
+      margin-top:20px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .tags span{
+      padding:8px 15px;
+      background:#312e81;
+      border-radius:20px;
+      font-size:14px;
+    }
+
+    .project-icon{
+      font-size:80px;
+      color:#8b5cf6;
+    }
+
+    /* ABOUT */
+
+    .about{
+      max-width:900px;
+      margin:auto;
+      text-align:center;
+      line-height:35px;
+      font-size:22px;
+      color:#d1d5db;
+    }
+
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      padding:30px;
+      border-top:1px solid rgba(255,255,255,0.1);
+      color:#9ca3af;
+      margin-top:40px;
+    }
+
+
+
+
   </style>
+
 </head>
 
 <body>
 
-<header>
-  <h1>Harshita Ahirwar</h1>
-  <p>API Testing Portfolio 🚀</p>
-</header>
+  <!-- NAVBAR -->
 
-<div class="container">
+  <nav>
 
-  <div class="section">
-    <h2>📂 Projects</h2>
+    <h1>HA</h1>
 
-    <div class="card" onclick="openLink('https://github.com/harshitaahirwar')">
-      <h3>API Testing Project</h3>
-      <p>CRUD, Automation, Postman + Newman</p>
-      <a class="btn">View Project</a>
+    <ul>
+
+      <li><a href="#">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+     <li><a href="#projects">My Projects</a></li>
+      <li><a href="#work">Previous Work</a></li>
+      <li><a href="#about">About</a></li>
+
+    </ul>
+
+  </nav>
+
+  <!-- LIGHT EFFECT -->
+
+  <div class="lights">
+
+    <div class="light1"></div>
+    <div class="light2"></div>
+    <div class="light3"></div>
+
+  </div>
+
+  <!-- HERO -->
+
+  <header>
+
+    <div class="hero-box">
+
+      <h1>Harshita Ahirwar</h1>
+
+      <h2>SDET </h2> <h2>2 Year Experience</h2>
+
+      <div class="typing">
+
+        Playwright • JavaScript • GitHub • CI/CD • Selenium • Java • API Testing • Automation • Postman • SQL
+
+      </div>
+
+      <a href="#projects" class="hero-btn">
+
+        Explore My Project
+
+      </a>
+
     </div>
 
-    <div class="card" onclick="openLink('#')">
-      <h3>Postman Documentation</h3>
-      <p>Live API Docs</p>
-      <a class="btn">Open Docs</a>
+  </header>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <h1 class="title">TECHNOLOGIES & TOOLS</h1>
+
+    <div class="tools">
+
+      <div class="tool-card">
+
+        <i class="fa-solid fa-vial"></i>
+
+        <h3>Playwright</h3>
+
+      </div>
+
+      <div class="tool-card">
+
+        <i class="fa-brands fa-js"></i>
+
+        <h3>JavaScript</h3>
+
+      </div>
+
+      <div class="tool-card">
+
+        <i class="fa-solid fa-robot"></i>
+
+        <h3>Selenium</h3>
+
+      </div>
+
+      <div class="tool-card">
+
+        <i class="fa-brands fa-java"></i>
+
+        <h3>Java</h3>
+
+      </div>
+
+       <div class="tool-card">
+
+        <i class="fa-solid fa-vial-circle-check"></i>
+
+        <h3>TestNG</h3>
+
+      </div>
+
+       <div class="tool-card">
+
+        <i class="fa-solid fa-cloud"></i>
+
+        <h3>API Testing</h3>
+
+      </div>
+
+       <div class="tool-card">
+
+        <i class="fa-solid fa-paper-plane"></i>
+
+        <h3>Postman</h3>
+
+      </div>
+
+       <div class="tool-card">
+
+        <i class="fa-solid fa-ticket"></i>
+
+        <h3>Jira</h3>
+
+      </div>
+       <div class="tool-card">
+
+        <i class="fa-brands fa-html5"></i>
+
+        <h3>HTML/CSS</h3>
+
+      </div>
+
+
+       <div class="tool-card">
+
+        <i class="fa-solid fa-gears"></i>
+
+        <h3>Jenkins</h3>
+
+      </div>
+
+
+       <div class="tool-card">
+
+        <i class="fa-brands fa-git-alt"></i>
+
+        <h3>Git</h3>
+
+      </div>
+
+     <div class="tool-card">
+    <i class="fa-solid fa-database"></i>
+    <h3>SQL</h3>
+  </div>
+
+    </div>
+
+  </section>
+
+  <!-- PREVIOUS WORK -->
+
+  <section id="work">
+
+    <h1 class="title">PREVIOUS WORK</h1>
+
+    <div class="projects">
+
+    
+
+      <div class="project-card">
+
+        <div class="project-icon">
+
+          <i class="fa-solid fa-desktop"></i>
+
+        </div>
+
+        <h2>LMS System Automation</h2>
+
+        <p>
+
+<h2>Cornerstone OnDemand || Junior QA Engineer Pune</h2>
+
+<h4>• Worked on an enterprise LMS implementation project involving end-to-end testing of learning solutions for global users.</h4>
+<h4>• Performed API testing using Postman, handling validation and authentication of REST APIs using JWT tokens.</h4>
+<h4>• Automated UI test scenarios using Playwright and Selenium WebDriver (Java) automate, automating approximately 40% of regression test cases.</h4>
+<h4>• Improved test execution efficiency by enhancing automated test suites and stabilizing flaky tests.</h4>
+<h4>• Logged, tracked, and retested defects using Jira.</h4>
+<h4>• Executed SQL queries for backend data validation and database integrity checks.</h4>
+<h4>• Collaborated in an Agile/Scrum environment with cross-functional teams.</h4>
+<h4>• Reduced defect leakage into production by approximately 20%.</h4>
+
+        </p>
+
+        <div class="tags">
+           <span>Playwright</span>
+            <span>JavaScript</span>
+          <span>Selenium</span>
+          <span>Java</span>
+          <span>Maven</span>
+          <span>TestNG</span>
+           <span>POM</span>
+            <span>API Testing</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MY PROJECTS -->
+
+  <section id="projects">
+
+    <h1 class="title">MY PROJECTS</h1>
+
+    <div class="projects">
+
+      <a href="https://github.com/harshitaahirwar/Automated_Website_Javascript_Playwright.git"
+   target="_blank"
+   class="project-link">
+
+  <div class="project-card">
+
+    <div class="project-icon">
+      <i class="fa-solid fa-code"></i>
+    </div>
+
+    <h2>Playwright Automation with JavaScript</h2>
+
+    <p>
+      Created Framework from Scratch.
+      End-to-end automation framework using
+      Playwright with JavaScript, reusable
+      utilities and reporting.
+    </p>
+
+    <div class="github-btn">
+      <span>🔗 View GitHub Project</span>
+    </div>
+
+    <div class="tags">
+      <span>Playwright</span>
+      <span>JavaScript</span>
+      <span>Automation</span>
     </div>
 
   </div>
 
-  <div class="section">
-    <h2>👩‍💻 About Me</h2>
-    <p>I am a QA Engineer focused on API testing, automation, and building scalable test frameworks.</p>
+</a>
+
+    
+
+          <a href="https://github.com/harshitaahirwar/SeleniumProject.git"
+   target="_blank"
+   class="project-link">
+
+  <div class="project-card">
+
+    <div class="project-icon">
+      <i class="fa-solid fa-code"></i>
+    </div>
+
+    <h2>Selenium Automation with Java</h2>
+
+    <p>
+      Created automation framework using
+      Selenium with Java.Created  reusable
+      utilities so need to write again and again.
+    </p>
+
+    <div class="github-btn">
+      <span>🔗 View GitHub Project</span>
+    </div>
+
+    <div class="tags">
+      <span>Selenium</span>
+      <span>Java</span>
+      <span>Automation</span>
+    </div>
+
   </div>
 
-</div>
+</a>
 
-<footer>
-  <p>© 2026 Harshita Ahirwar</p>
-</footer>
+</section>
 
-<script>
-  function openLink(url) {
-    window.open(url, '_blank');
-  }
-</script>
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h1 class="title">ABOUT ME</h1>
+
+    <div class="about">
+
+      Passionate SDET and QA Automation Engineer focused on automation and building reliable and efficient test automation frameworks.
+    
+      I have hands-on experience with Playwright Framework, Selenium, TestNG, API testing, Postman Maven.
+      I enjoy solving real-world testing challenges, improving software quality, and learning modern automation technologies.
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Harshita Ahirwar | SDET 
+
+  </footer>
 
 </body>
+
 </html>
